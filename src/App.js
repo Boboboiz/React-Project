@@ -1,10 +1,16 @@
-import { BrowserRouter, Routes, Route  } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, unstable_HistoryRouter as HistoryRouter  } from 'react-router-dom';
 import { routes } from './app/routes';
 import Header from './components/Header';
+// import DemoQuery from './demo/DemoQuery';
 
+
+import { createBrowserHistory } from 'history';
+let history = createBrowserHistory()
+// history.push("/signin")
 function App() {
   return (
-    <BrowserRouter>
+    // <HistoryRouter history={history}>
+    <BrowserRouter> 
     <Header />
     <Routes>
     {routes.map(({path, component: Component}, children) => {
@@ -19,9 +25,12 @@ function App() {
       )
     })}
     {/* component: Component (gọi là Alias) */} 
+    {/* <Route path='/demoquery' element={<DemoQuery />} /> */}
+    {/* <Route path='/demoquery:title' element={<DemoQuery />} /> */}
     </Routes>  
     
-    </BrowserRouter>
+     </BrowserRouter> 
+    // </HistoryRouter>
   );
 }
 

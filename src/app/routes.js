@@ -5,7 +5,9 @@ import Home from "../features/Booking/Home";
 import Seats from "../features/Booking/Seats";
 
 export const routes = [
+  { path: "/:id", component: Home },
   { path: "/", component: Home },
+
   { path: "/detail", component: Detail, children:[
     {path:'/a', component: ""},
     {path:'/b', component: ""},

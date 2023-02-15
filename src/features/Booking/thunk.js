@@ -20,7 +20,7 @@ export const fetchBanners = async (dispatch) => {
   }
 };
 
-export const fetchMovies = async (dispatch) => {
+export const fetchMovies =  (soTrang ) => async (dispatch) => {
     try {
       const res = await axios({
         // url: domain + endpoint
@@ -28,8 +28,9 @@ export const fetchMovies = async (dispatch) => {
         method: "GET",
         params:{
             maNhom:"GP01",
-            soTrang: 1,
-            soPhanTuTrenTrang: 10,
+            soTrang: soTrang,
+          // soTrang, // object literal 
+            soPhanTuTrenTrang: 8,
         },
         headers: {
           TokenCybersoft:
