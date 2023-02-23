@@ -2,6 +2,7 @@ import produce from "immer";
 const initialState = {
   banners: [],
   movies: {},
+  selectedScheduleDetail: null,
 };
 
 const reducer = (state = initialState, { type, payload }) => {
@@ -11,6 +12,9 @@ const reducer = (state = initialState, { type, payload }) => {
     }
     if (type === "SET_MOVIES") {
       draft.movies = payload;
+    }
+    if(type === 'SET_SCHEDULE'){
+      draft.selectedScheduleDetail = payload
     }
   });
 };

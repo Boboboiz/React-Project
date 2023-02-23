@@ -4,6 +4,7 @@ import HomeCarousel from "./components/HomeCarousel";
 import MovieList from "./components/MovieList";
 import { fetchBanners, fetchMovies } from "./thunk";
 import { useParams, useSearchParams } from "react-router-dom";
+import MovieTab from "./components/MovieTab";
 const Home = () => {
   const dispatch = useDispatch();
   const param = useParams()
@@ -24,6 +25,7 @@ const Home = () => {
     <div>
       <HomeCarousel />
       <MovieList />
+      <MovieTab />
     </div>
   );
 };

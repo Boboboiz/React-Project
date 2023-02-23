@@ -13,7 +13,10 @@ export const routes = [
     {path:'/b', component: ""},
     {path:'/c', component: ""}, // ví dụ có thêm route con từ component 
   ]},
-  { path: "/seats", component: Seats },
+  { path: "/seats/:id", component: Seats },
   { path: "/signin", component: Signin },
   { path: "/singup", component: Signup },
 ];
+
+
+// /seats/:id  => id được coi là tham số 
